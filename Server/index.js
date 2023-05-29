@@ -2,7 +2,13 @@ const { json } = require("express");
 const express = require("express");
 const { connect } = require("./config/db");
 const { videoRouter } = require("./routes/video.routes");
+const cors = require("cors");
 const app = express();
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 
 app.use("/", videoRouter);
