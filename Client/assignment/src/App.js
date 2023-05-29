@@ -10,16 +10,26 @@ let arr = [
   "Harmfull or Abusive Content",
 ];
 function App() {
+
   const handleClick = (tag) => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
     const video = document.querySelector("#video");
     video.pause();
+
     let videoTime = video.currentTime;
     videoTime = (videoTime / 60).toFixed(2);
+
     const data = {
       tags: tag,
-      Date: new Date(),
-      videoId: "demo-id",
-      videoTime,
+      Date: `${year}-${month.toString().padStart(2, "0")}-${day
+        .toString()
+        .padStart(2, "0")}`,
+     
+      videoId: "demo-id", videoTime,
     };
 
     fetch(`http://localhost:8080/add`, {

@@ -1,14 +1,11 @@
 const mongoose = require("mongoose");
 
-const videoSchema = mongoose.Schema(
-  {
-    tag: String,
-    videoTime: Number,
-    Date: String,
-    videoId: String,
-  },
-  
-);
+const videoSchema = mongoose.Schema({
+  tags: String,
+  videoTime: Number,
+  Date: String,
+  videoId: String,
+});
 
 const VideoModal = mongoose.model("video", videoSchema);
 

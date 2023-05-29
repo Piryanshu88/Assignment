@@ -7,9 +7,9 @@ videoRouter.post("/add", async (req, res) => {
   try {
     const data = new VideoModal(req.body);
     await data.save();
-    res.send("Data Send Successfully");
+    res.send({ msg: "Data Send Successfully" });
   } catch (error) {
-    res.send("Something went wrong");
+    res.send({ msg: "Something went wrong" });
     console.log(error);
   }
 });
