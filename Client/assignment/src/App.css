@@ -25,6 +25,13 @@
   background: #000;
 }
 
+.toast {
+  height: 20px;
+  background: green;
+  margin: auto;
+  padding: 10px;
+  display: none;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
